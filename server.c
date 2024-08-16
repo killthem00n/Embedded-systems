@@ -22,7 +22,7 @@ int main(void)
 												
 	server.sin_family = AF_INET;												//in server struct indicate family...															
 	server.sin_port = htons(7777);												//... port...
-	server.sin_addr.s_addr = htonl(INADDR_ANY);										//... and address
+	server.sin_addr.s_addr = inet_addr("10.0.2.15");									//... and address
 	
 	if ((bind(serv_fd, (struct sockaddr *)&server, sizeof(server))) == -1){							//binding the struct	
 		perror("bind");
